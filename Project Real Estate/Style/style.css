@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #121212;
+  color: #f7f7f7;
+  font-family: poppins;
+}
+
+/* navbar */
+#navbar {
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 10;
+}
+
+#navbarchild {
+  padding: 0.75em 1em;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 0.5em #333333;
+}
+
+#titlenav {
+  font-size: 22px;
+  font-weight: 600;
+}
+#contnav {
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ulnav {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 350px;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em 0;
+  transform: translateY(-100%); 
+  transition: transform 0.6s ease-out;
+  border-radius: 38px;
+  gap: 8px;
+}
+
+#ulnav.active {
+  transform: translateY(6em);
+  z-index:1;
+}
+
+#ulnav li {
+  display: flex;         
+  justify-content: center; 
+  align-items: center; 
+  width: 300px;          
+  height: 50px;       
+  box-sizing: border-box; 
+  background-color: #141414;
+  border-radius: 1em;
+  list-style: none;
+}
+
+#ulnav a {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.buttonnav {
+  background: none;
+  border: none;
+}
+#toggle {
+  color: #f7f7f7;
+  margin: 0 0.5em;
+  font-size: 1.75em;
+}
+/* overlay */
+#main.overlay {
+  filter: brightness(0.5) blur(1px);
+  transition: 0.6s ease-out;
+}
+/* header */
+.ovr {
+  height: 100vh;
+  background-color: #121212;
+}
+::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+#imagecont {
+  background: linear-gradient(to top,rgba(18, 18, 18,1) 0%,rgba(18, 18, 18,0.1) 55%,transparent 70%,transparent 100%),url(imgheader.jpg) center / cover no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#imagecont p {
+  font: 550 22px sf pro display;
+  letter-spacing: 6px;
+  animation: slideUp 1s ease-out forwards;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 450px) {
+  body {
+    background-color: white;
+  }
+}
